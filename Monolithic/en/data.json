@@ -1,0 +1,35 @@
+{
+	"novel": {
+        "title": "The Title of the Novel",
+        "author": "the name of the author",
+        "description": "description of the novel"
+    },
+   	"Chapter1":{
+        "chapter": 1,
+        "title": "Title of the First Chapter",
+        "subtitle": "Subtitle of Chapter One",
+        "paragraphs": [
+        "<p>Paragraph 1 of Chapter 1</p>",
+        "<p>Paragraph 2 of Chapter 1</p>",
+        "<p>Paragraph 3 of Chapter 1</p>"
+        ]
+    },
+	"Chapter2":{
+        "chapter": 2,
+        "title": "Title of Chapter 2",
+        "subtitle": "Subheading of Chapter Two",
+        "paragraphs": [
+        "<p>Paragraph 1 of Chapter 2</p>",
+        "<p>Paragraph 2 of Chapter 2</p>"
+        ]
+    },
+	"Chapter3":{
+        "chapter": 3,
+        "title": "The Title of Chapter Three",
+        "subtitle": "Subtitle of Chapter 3",
+        "paragraphs": [
+        "<p>Paragraph 1 of Chapter 3</p>",
+        "<p>Paragraph 2 of Chapter 3</p>"
+        ]
+    }
+}

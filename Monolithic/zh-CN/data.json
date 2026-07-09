@@ -1,0 +1,33 @@
+{
+    "novel": {
+        "title": "小说的标题",
+        "author": "作者的名字",
+        "description": "小说的描述"
+    },
+    "Chapter1":{
+    "chapter": 1,
+    "title": "第一章的标题",
+    "subtitle": "—第一章的副标题—",
+    "paragraphs": [
+        "<p>第一章的段落1</p>",
+        "<p>第一章的段落2</p>",
+        "<p>第一章的段落3</p>"
+       ]
+    },
+    "Chapter2":{
+    "chapter": 2,
+    "title": "第二章的标题",
+    "subtitle": "—第二章的副标题—",
+    "paragraphs": [
+        "<p>第二章的段落1</p>"
+       ]
+    },
+    "Chapter3":{
+    "chapter": 3,
+    "title": "第三章的标题",
+    "subtitle": "—第三章的副标题—",
+    "paragraphs": [
+        "<p>第三章的段落1</p>"
+       ]
+    }
+}
