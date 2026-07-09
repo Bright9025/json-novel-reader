@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-	<title>小说阅读 · 加载中...</title>
+	<title>Novel Reader · Loading...</title>
 	<style>
-		/* ===== CSS 变量 ===== */
+		/* ===== CSS Variables ===== */
 		:root {
 			--bg-color: #f5f0e8;
 			--text-color: #333333;
@@ -50,7 +50,7 @@
 			min-height: 100vh;
 		}
 
-		/* ===== 控制栏 ===== */
+		/* ===== Control Bar ===== */
 		.control-bar {
 			position: fixed;
 			top: 0;
@@ -109,7 +109,7 @@
 			transition: background 0.35s ease;
 		}
 
-		/* --- 主题切换 --- */
+		/* --- Theme Toggle --- */
 		.theme-toggle {
 			display: flex;
 			align-items: center;
@@ -149,7 +149,7 @@
 			transform: scale(0.94);
 		}
 
-		/* --- 字体大小 --- */
+		/* --- Font Size Control --- */
 		.font-control {
 			display: flex;
 			align-items: center;
@@ -193,7 +193,7 @@
 			font-variant-numeric: tabular-nums;
 		}
 
-		/* --- 背景色选择 --- */
+		/* --- Background Color Selection --- */
 		.bg-colors {
 			display: flex;
 			align-items: center;
@@ -244,7 +244,7 @@
 			background: var(--border-color);
 		}
 
-		/* ===== 页面容器 ===== */
+		/* ===== Page Container ===== */
 		.page-container {
 			max-width: var(--max-width);
 			margin: 0 auto;
@@ -254,7 +254,7 @@
 			min-height: calc(100vh - 68px);
 		}
 
-		/* ===== 首页样式 ===== */
+		/* ===== Home Page Styles ===== */
 		.home-page {
 			display: block;
 		}
@@ -326,7 +326,7 @@
 			margin-left: 8px;
 		}
 
-		/* ===== 阅读页样式 ===== */
+		/* ===== Reading Page Styles ===== */
 		.reading-page {
 			display: none;
 		}
@@ -373,7 +373,7 @@
 			color: var(--accent-color);
 		}
 
-		/* ===== 章节导航栏（阅读页底部） ===== */
+		/* ===== Chapter Navigation Bar (Bottom of Reading Page) ===== */
 		.chapter-nav {
 			display: flex;
 			justify-content: center;
@@ -427,7 +427,7 @@
 			outline: 1px solid var(--accent-color);
 		}
 
-		/* ===== 返回首页按钮 ===== */
+		/* ===== Back to Home Button ===== */
 		.back-home-wrapper {
 			text-align: center;
 			margin-top: 1.2em;
@@ -449,7 +449,7 @@
 			border-color: var(--accent-color);
 		}
 
-		/* ===== 响应式 ===== */
+		/* ===== Responsive Design ===== */
 		@media (max-width: 820px) {
 			body { padding-top: 60px; }
 			.control-bar { padding: 6px 14px; gap: 6px 10px; }
@@ -531,42 +531,42 @@
 </head>
 <body>
 
-	<!-- ===== 控制栏 ===== -->
-	<header class="control-bar" id="controlBar" role="toolbar" aria-label="阅读控制">
+	<!-- ===== Control Bar ===== -->
+	<header class="control-bar" id="controlBar" role="toolbar" aria-label="Reading Controls">
 		<div class="chapter-label" id="chapterLabel">
-			<span id="chapterTitleDisplay">加载中...</span>
-			<small>· 小说</small>
+			<span id="chapterTitleDisplay">Loading...</span>
+			<small>· Novel</small>
 		</div>
 
 		<div class="controls-group">
-			<div class="theme-toggle" id="themeToggle" role="group" aria-label="主题切换">
-				<button data-theme="light" class="active" aria-label="白天模式" title="白天模式">☀️</button>
-				<button data-theme="dark" aria-label="黑夜模式" title="黑夜模式">🌙</button>
+			<div class="theme-toggle" id="themeToggle" role="group" aria-label="Theme Toggle">
+				<button data-theme="light" class="active" aria-label="Light Mode" title="Light Mode">☀️</button>
+				<button data-theme="dark" aria-label="Dark Mode" title="Dark Mode">🌙</button>
 			</div>
 			<span class="divider"></span>
-			<div class="font-control" role="group" aria-label="字体大小">
-				<button id="fontDecrease" aria-label="减小字号" title="减小字号">A−</button>
+			<div class="font-control" role="group" aria-label="Font Size">
+				<button id="fontDecrease" aria-label="Decrease Font Size" title="Decrease Font Size">A−</button>
 				<span class="font-size-display" id="fontSizeDisplay">18</span>
-				<button id="fontIncrease" aria-label="增大字号" title="增大字号">A+</button>
+				<button id="fontIncrease" aria-label="Increase Font Size" title="Increase Font Size">A+</button>
 			</div>
 			<span class="divider"></span>
-			<div class="bg-colors" id="bgColors" role="group" aria-label="背景颜色">
+			<div class="bg-colors" id="bgColors" role="group" aria-label="Background Colors">
 				<span id="colorDotsContainer" style="display:contents;"></span>
-				<button class="reset-colors-btn" id="resetBgBtn" title="恢复主题默认背景" aria-label="恢复默认背景">↺</button>
+				<button class="reset-colors-btn" id="resetBgBtn" title="Reset to Theme Default" aria-label="Reset Background">↺</button>
 			</div>
 		</div>
 	</header>
 
-	<!-- ===== 页面容器 ===== -->
+	<!-- ===== Page Container ===== -->
 	<main class="page-container" id="pageContainer">
-		<!-- 首页（简介+目录） -->
+		<!-- Home Page (Introduction + Table of Contents) -->
 		<div class="home-page" id="homePage">
-			<div class="loading-msg">📖 正在加载小说数据 ...</div>
+			<div class="loading-msg">📖 Loading novel data ...</div>
 		</div>
 
-		<!-- 阅读页 -->
+		<!-- Reading Page -->
 		<div class="reading-page" id="readingPage">
-			<!-- 动态渲染 -->
+			<!-- Dynamically rendered -->
 		</div>
 	</main>
 
@@ -575,36 +575,36 @@
 			'use strict';
 
 			// ================================================================
-			// 1. 配置与状态
+			// 1. Configuration and State
 			// ================================================================
 			const COOKIE_NAME = 'novel_reader_settings';
 			const COOKIE_EXPIRY_DAYS = 365;
 			const THEME_DEFAULTS = { light: '#f5f0e8', dark: '#1a1a2e' };
 			const PRESET_COLORS = [
-				{ color: '#f5f0e8', label: '米白' },
-				{ color: '#ffffff', label: '纯白' },
-				{ color: '#f0ead6', label: '奶油' },
-				{ color: '#e8f0e8', label: '淡绿' },
-				{ color: '#f5e8d0', label: '暖米' },
-				{ color: '#1a1a2e', label: '深蓝黑' },
-				{ color: '#1a1a1a', label: '纯黑' },
-				{ color: '#2d2d3a', label: '暗紫灰' },
-				{ color: '#2d2d2d', label: '暗灰' },
-				{ color: '#1a2a3a', label: '深蓝' },
+				{ color: '#f5f0e8', label: 'Warm White' },
+				{ color: '#ffffff', label: 'Pure White' },
+				{ color: '#f0ead6', label: 'Cream' },
+				{ color: '#e8f0e8', label: 'Light Green' },
+				{ color: '#f5e8d0', label: 'Warm Beige' },
+				{ color: '#1a1a2e', label: 'Deep Blue' },
+				{ color: '#1a1a1a', label: 'Pure Black' },
+				{ color: '#2d2d3a', label: 'Dark Purple' },
+				{ color: '#2d2d2d', label: 'Dark Gray' },
+				{ color: '#1a2a3a', label: 'Navy Blue' },
 			];
 
-			// 数据
+			// Data
 			let novelInfo = null;		// { title, author, description }
-			let chapters = [];		   // 数组，每个元素 { chapter, title, subtitle, paragraphs }
-			let currentView = 'home';	// 'home' 或 'reading'
-			let currentChapterIndex = 0; // 阅读页当前章节索引
+			let chapters = [];		   // Array of { chapter, title, subtitle, paragraphs }
+			let currentView = 'home';	// 'home' or 'reading'
+			let currentChapterIndex = 0; // Current chapter index on reading page
 
 			let currentTheme = 'light';
 			let currentFontSize = 18;
 			let currentBgColor = THEME_DEFAULTS.light;
 			let customBgSelected = false;
 
-			// ===== DOM 引用 =====
+			// ===== DOM References =====
 			const homePage = document.getElementById('homePage');
 			const readingPage = document.getElementById('readingPage');
 			const chapterTitleDisplay = document.getElementById('chapterTitleDisplay');
@@ -616,7 +616,7 @@
 			const resetBgBtn = document.getElementById('resetBgBtn');
 
 			// ================================================================
-			// 2. Cookie 工具
+			// 2. Cookie Utilities
 			// ================================================================
 			function setCookie(name, value, days) {
 				const expires = new Date(Date.now() + days * 86400000).toUTCString();
@@ -629,7 +629,7 @@
 			}
 
 			// ================================================================
-			// 3. 设置持久化
+			// 3. Settings Persistence
 			// ================================================================
 			function saveSettings() {
 				const settings = {
@@ -650,7 +650,7 @@
 			}
 
 			// ================================================================
-			// 4. 主题 / 字体 / 背景
+			// 4. Theme / Font / Background
 			// ================================================================
 			function applyTheme(theme, bgColorOverride) {
 				const root = document.documentElement;
@@ -686,7 +686,7 @@
 					dot.title = label;
 					dot.dataset.color = color;
 					dot.setAttribute('role', 'button');
-					dot.setAttribute('aria-label', '背景色：' + label);
+					dot.setAttribute('aria-label', 'Background: ' + label);
 					dot.addEventListener('click', function(e) {
 						e.stopPropagation();
 						const c = this.dataset.color;
@@ -710,10 +710,10 @@
 			}
 
 			// ================================================================
-			// 5. 更新页面标题（<title>）和控制栏显示
+			// 5. Update Page Title (<title>) and Control Bar Display
 			// ================================================================
 			function updateTitleAndLabel(view, chapterIdx) {
-				const novelTitle = novelInfo ? novelInfo.title : '小说';
+				const novelTitle = novelInfo ? novelInfo.title : 'Novel';
 				let labelText = '';
 				let titleText = '';
 
@@ -723,8 +723,8 @@
 				} else {
 					const ch = chapters[chapterIdx];
 					if (ch) {
-						labelText = `第${ch.chapter}章：${ch.title}`;
-						titleText = `${novelTitle} · 第${ch.chapter}章 ${ch.title}`;
+						labelText = `Chapter ${ch.chapter}: ${ch.title}`;
+						titleText = `${novelTitle} · Chapter ${ch.chapter} ${ch.title}`;
 					} else {
 						labelText = novelTitle;
 						titleText = novelTitle;
@@ -735,25 +735,25 @@
 			}
 
 			// ================================================================
-			// 6. 渲染首页
+			// 6. Render Home Page
 			// ================================================================
 			function renderHome() {
 				if (!novelInfo || chapters.length === 0) {
-					homePage.innerHTML = `<div class="error-msg">⚠️ 数据加载失败或无章节</div>`;
+					homePage.innerHTML = `<div class="error-msg">⚠️ Failed to load data or no chapters</div>`;
 					return;
 				}
 
 				let html = `
 					<h1 class="novel-title">${novelInfo.title}</h1>
-					<div class="novel-author">${novelInfo.author || '未知作者'}</div>
-					<div class="novel-description">${novelInfo.description || '（暂无简介）'}</div>
-					<h2 style="font-weight:400; font-size:1.4rem; margin:0.8em 0 0.4em 0; letter-spacing:2px; border-bottom:1px solid var(--border-color); padding-bottom:0.3em;">📑 目录</h2>
+					<div class="novel-author">${novelInfo.author || 'Unknown Author'}</div>
+					<div class="novel-description">${novelInfo.description || '(No description)'}</div>
+					<h2 style="font-weight:400; font-size:1.4rem; margin:0.8em 0 0.4em 0; letter-spacing:2px; border-bottom:1px solid var(--border-color); padding-bottom:0.3em;">📑 Table of Contents</h2>
 					<div class="chapter-list">
 				`;
 				chapters.forEach((ch, idx) => {
 					html += `
 						<div class="chapter-item" data-index="${idx}">
-							<span class="chapter-num">第${ch.chapter}章</span>
+							<span class="chapter-num">Chapter ${ch.chapter}</span>
 							<span class="chapter-title">${ch.title}</span>
 							${ch.subtitle ? `<span class="chapter-sub">${ch.subtitle}</span>` : ''}
 						</div>
@@ -762,7 +762,7 @@
 				html += `</div>`;
 				homePage.innerHTML = html;
 
-				// 绑定点击事件
+				// Bind click events
 				homePage.querySelectorAll('.chapter-item').forEach(el => {
 					el.addEventListener('click', function() {
 						const idx = parseInt(this.dataset.index);
@@ -772,7 +772,7 @@
 					});
 				});
 
-				// 显示首页，隐藏阅读页
+				// Show home page, hide reading page
 				homePage.classList.remove('hidden');
 				readingPage.classList.remove('active');
 				readingPage.style.display = 'none';
@@ -782,17 +782,17 @@
 			}
 
 			// ================================================================
-			// 7. 渲染阅读页（含章节导航栏）
+			// 7. Render Reading Page (with Chapter Navigation Bar)
 			// ================================================================
 			function renderReading(index) {
 				if (!chapters.length || index < 0 || index >= chapters.length) {
-					readingPage.innerHTML = `<div class="error-msg">章节不存在</div>`;
+					readingPage.innerHTML = `<div class="error-msg">Chapter not found</div>`;
 					return;
 				}
 				const ch = chapters[index];
 				const total = chapters.length;
 
-				// 构建正文
+				// Build content
 				let html = `
 					<div class="chapter-title">
 						${ch.title}
@@ -803,32 +803,32 @@
 					html += p;
 				});
 
-				// ---- 章节导航栏（当章节 > 1 时显示） ----
+				// ---- Chapter Navigation Bar (shown when more than 1 chapter) ----
 				if (total > 1) {
 					html += `
 						<div class="chapter-nav">
-							<button id="prevChapter" ${index === 0 ? 'disabled' : ''}>◀ 上一章</button>
+							<button id="prevChapter" ${index === 0 ? 'disabled' : ''}>◀ Previous</button>
 							<span class="chapter-indicator">
-								<span>第 ${index+1} / ${total} 章</span>
-								<select id="chapterSelect" aria-label="跳转章节">
-									${chapters.map((chItem, i) => `<option value="${i}" ${i === index ? 'selected' : ''}>第${chItem.chapter}章 ${chItem.title}</option>`).join('')}
+								<span>Chapter ${index+1} / ${total}</span>
+								<select id="chapterSelect" aria-label="Jump to Chapter">
+									${chapters.map((chItem, i) => `<option value="${i}" ${i === index ? 'selected' : ''}>Chapter ${chItem.chapter} ${chItem.title}</option>`).join('')}
 								</select>
 							</span>
-							<button id="nextChapter" ${index === total-1 ? 'disabled' : ''}>下一章 ▶</button>
+							<button id="nextChapter" ${index === total-1 ? 'disabled' : ''}>Next ▶</button>
 						</div>
 					`;
 				}
 
-				// ---- 返回首页按钮 ----
+				// ---- Back to Home Button ----
 				html += `
 					<div class="back-home-wrapper">
-						<button class="back-home-btn" id="backHomeBtn">🏠 返回目录</button>
+						<button class="back-home-btn" id="backHomeBtn">🏠 Back to Table of Contents</button>
 					</div>
 				`;
 
 				readingPage.innerHTML = html;
 
-				// ---- 绑定导航事件 ----
+				// ---- Bind Navigation Events ----
 				if (total > 1) {
 					const prevBtn = document.getElementById('prevChapter');
 					const nextBtn = document.getElementById('nextChapter');
@@ -858,7 +858,7 @@
 					}
 				}
 
-				// 返回首页
+				// Back to home
 				const backBtn = document.getElementById('backHomeBtn');
 				if (backBtn) {
 					backBtn.addEventListener('click', function() {
@@ -866,7 +866,7 @@
 					});
 				}
 
-				// 显示阅读页，隐藏首页
+				// Show reading page, hide home page
 				homePage.classList.add('hidden');
 				readingPage.style.display = 'block';
 				readingPage.classList.add('active');
@@ -875,12 +875,12 @@
 				updateTitleAndLabel('reading', index);
 				saveSettings();
 
-				// 滚动到顶部
+				// Scroll to top
 				window.scrollTo({ top: 0, behavior: 'smooth' });
 			}
 
 			// ================================================================
-			// 8. 切换视图
+			// 8. Switch Views
 			// ================================================================
 			function switchToReading(index) {
 				if (index < 0 || index >= chapters.length) return;
@@ -892,7 +892,7 @@
 			}
 
 			// ================================================================
-			// 9. 加载 data.json
+			// 9. Load data.json
 			// ================================================================
 			async function loadData() {
 				try {
@@ -900,18 +900,18 @@
 					if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 					const json = await response.json();
 
-					// 解析 novel 信息
+					// Parse novel info
 					if (json.novel) {
 						novelInfo = {
-							title: json.novel.title || '未命名小说',
-							author: json.novel.author || '未知作者',
+							title: json.novel.title || 'Untitled Novel',
+							author: json.novel.author || 'Unknown Author',
 							description: json.novel.description || ''
 						};
 					} else {
-						novelInfo = { title: '未命名小说', author: '未知作者', description: '' };
+						novelInfo = { title: 'Untitled Novel', author: 'Unknown Author', description: '' };
 					}
 
-					// 提取章节：键名以 "Chapter" 开头
+					// Extract chapters: keys starting with "Chapter"
 					const keys = Object.keys(json).filter(k => /^Chapter\d+$/i.test(k));
 					const sortedKeys = keys.sort((a, b) => {
 						const numA = parseInt(a.match(/\d+/)[0]);
@@ -923,15 +923,15 @@
 						const item = json[key];
 						return {
 							chapter: item.chapter || parseInt(key.match(/\d+/)[0]),
-							title: item.title || '未命名章节',
+							title: item.title || 'Untitled Chapter',
 							subtitle: item.subtitle || '',
 							paragraphs: Array.isArray(item.paragraphs) ? item.paragraphs : []
 						};
 					});
 
-					if (chapters.length === 0) throw new Error('没有找到任何章节');
+					if (chapters.length === 0) throw new Error('No chapters found');
 
-					// 读取保存的设置
+					// Load saved settings
 					const saved = loadSettings();
 					let theme = 'light',
 						fontSize = 18,
@@ -950,7 +950,7 @@
 						if (readingIdx >= chapters.length) readingIdx = 0;
 					}
 
-					// 应用设置
+					// Apply settings
 					currentTheme = theme;
 					currentFontSize = fontSize;
 					currentBgColor = bgColor;
@@ -969,7 +969,7 @@
 					});
 					updateColorDots(bgColor);
 
-					// 根据视图渲染
+					// Render based on view
 					if (view === 'home') {
 						renderHome();
 					} else {
@@ -981,23 +981,23 @@
 					saveSettings();
 
 				} catch (error) {
-					console.error('加载 data.json 失败:', error);
+					console.error('Failed to load data.json:', error);
 					homePage.innerHTML = `
 						<div class="error-msg">
-							⚠️ 无法加载 data.json<br>
+							⚠️ Failed to load data.json<br>
 							<span style="font-size:0.8rem;opacity:0.6;">${error.message}</span><br>
-							<span style="font-size:0.7rem;opacity:0.5;">请确保 data.json 与页面在同一目录，并使用本地服务器（如 VS Code Live Server）访问。</span>
+							<span style="font-size:0.7rem;opacity:0.5;">Please ensure data.json is in the same directory and access via a local server (e.g., VS Code Live Server).</span>
 						</div>
 					`;
 					homePage.classList.remove('hidden');
 					readingPage.style.display = 'none';
-					chapterTitleDisplay.textContent = '加载失败';
-					document.title = '加载失败';
+					chapterTitleDisplay.textContent = 'Failed to load';
+					document.title = 'Failed to load';
 				}
 			}
 
 			// ================================================================
-			// 10. 初始化控制栏事件
+			// 10. Initialize Control Bar Events
 			// ================================================================
 			function initControls() {
 				renderColorDots();
@@ -1051,7 +1051,7 @@
 			}
 
 			// ================================================================
-			// 11. 启动
+			// 11. Startup
 			// ================================================================
 			function init() {
 				initControls();
