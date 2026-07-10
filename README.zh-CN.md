@@ -1,3 +1,4 @@
+<div align="center">
 # 📖 JSON Novel Reader
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
@@ -5,7 +6,7 @@
 一款基于纯前端、通过 `data.json` 驱动的小说阅读器。  
 无需后端，无需数据库，只需一个 JSON 文件即可构建包含简介、目录和章节导航的完整小说站点。
 
----
+</div>
 
 ## ✨ 功能特点
 
@@ -16,7 +17,6 @@
 - 💾 **偏好持久化** – 所有阅读偏好（主题、字号、背景色、当前章节）自动保存在浏览器 Cookie 中，下次访问自动恢复。
 - 📱 **响应式设计** – 在手机、平板和桌面端均能获得舒适的阅读体验。
 
----
 
 ## 📁 项目结构
 
@@ -51,7 +51,6 @@ json-novel-reader/
 
 两个版本使用完全相同的 `data.json` 数据格式，功能体验也完全一致。您可以根据自己的需求选择任一版本。
 
----
 
 ## 📄 data.json 格式说明
 
@@ -101,7 +100,6 @@ json-novel-reader/
 
 > **注意**：章节键名（如 `Chapter1`）的数字顺序决定了目录和导航顺序，建议与 `chapter` 字段保持一致。
 
----
 
 ## 🚀 如何使用
 
@@ -127,7 +125,6 @@ json-novel-reader/
   - 点击“返回目录”回到首页。
   - 通过顶部控制栏切换主题、调整字号和背景色。
 
----
 
 ## 🎨 自定义与扩展
 
@@ -137,13 +134,11 @@ json-novel-reader/
 - **修改字体大小范围**：调整 `applyFontSize` 函数中的 `14` 和 `28` 数值（位置同上）。
 - **添加更多章节**：只需在 `data.json` 中按规则增加 `ChapterX` 对象，页面会自动识别并加入目录。
 
----
 
 ## 🌐 浏览器兼容性
 
 支持所有现代浏览器（Chrome、Firefox、Safari、Edge），不支持 Internet Explorer。
 
----
 
 ## 📝 技术实现
 
@@ -153,24 +148,20 @@ json-novel-reader/
 - CSS 变量实现动态主题切换
 - 完全响应式，适配各种屏幕尺寸
 
----
 
 ## 📄 许可证
 
 本项目采用 [MIT License](https://opensource.org/licenses/MIT) 开源，可自由使用、修改和分发。
 
----
 
 ## 🤝 贡献
 
 欢迎提交 Issue 或 Pull Request 来改进本项目。
 
----
 
 ## 📧 联系方式
 
 如有问题，请通过 GitHub Issues 联系。
 
----
 
 **Happy Reading! 📚**

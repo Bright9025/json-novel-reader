@@ -1,3 +1,4 @@
+<div align="center">
 # 📖 JSON Novel Reader
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
@@ -5,7 +6,7 @@
 A pure front‑end novel reader driven by a `data.json` file.  
 No backend, no database – just a JSON file to build a complete novel site with synopsis, table of contents, and chapter navigation.
 
----
+</div>
 
 ## ✨ Features
 
@@ -16,7 +17,6 @@ No backend, no database – just a JSON file to build a complete novel site with
 - 💾 **Preferences Persistence** – All reading preferences (theme, font size, background color, current chapter) are saved in browser cookies and restored on next visit.
 - 📱 **Responsive Design** – Comfortable on mobile, tablet and desktop.
 
----
 
 ## 📁 Project Structure
 
@@ -51,7 +51,6 @@ json-novel-reader/
 
 Both versions share the same `data.json` format and user experience. Choose the one that fits your needs.
 
----
 
 ## 📄 data.json Format
 
@@ -101,7 +100,6 @@ Place your `data.json` file in the same directory as the `index.html` you are us
 
 > **Note**: The numeric order in the keys (`Chapter1`, `Chapter2`, …) determines the order in the table of contents and navigation.
 
----
 
 ## 🚀 How to Use
 
@@ -119,7 +117,6 @@ Place your `data.json` file in the same directory as the `index.html` you are us
 5. **Read & navigate** – Click a chapter in the table of contents to start reading. Use the navigation bar at the bottom to switch chapters, or click “Back to Contents” to return to the homepage. Customize theme, font size and background color via the top control bar.
   
 
----
 
 ## 🎨 Customization
 
@@ -129,13 +126,11 @@ Place your `data.json` file in the same directory as the `index.html` you are us
 - **Font size range** – Adjust the `14` and `28` values inside the `applyFontSize` function (in the same location).
 - **Add more chapters** – Just add new `ChapterX` objects to your `data.json` – they will be automatically recognised.
 
----
 
 ## 🌐 Browser Support
 
 Works in all modern browsers (Chrome, Firefox, Safari, Edge). Not compatible with Internet Explorer.
 
----
 
 ## 🛠️ Technical Stack
 
@@ -145,24 +140,20 @@ Works in all modern browsers (Chrome, Firefox, Safari, Edge). Not compatible wit
 - CSS custom properties (variables) for dynamic theming
 - Fully responsive with flexbox and media queries
 
----
 
 ## 📄 License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) – feel free to use, modify and distribute.
 
----
 
 ## 🤝 Contributing
 
 Issues and pull requests are welcome!
 
----
 
 ## 📧 Contact
 
 For questions, please open a GitHub issue.
 
----
 
 **Happy Reading! 📚**
