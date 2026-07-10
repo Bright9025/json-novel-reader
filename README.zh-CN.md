@@ -1,9 +1,11 @@
 <div align="center">
+
 # 📖 JSON Novel Reader
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 一款基于纯前端、通过 `data.json` 驱动的小说阅读器。  
+
 无需后端，无需数据库，只需一个 JSON 文件即可构建包含简介、目录和章节导航的完整小说站点。
 
 </div>

@@ -1,9 +1,11 @@
 <div align="center">
+
 # 📖 JSON Novel Reader
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 A pure front‑end novel reader driven by a `data.json` file.  
+
 No backend, no database – just a JSON file to build a complete novel site with synopsis, table of contents, and chapter navigation.
 
 </div>
